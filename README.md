@@ -35,15 +35,28 @@ git push origin --delete <branchName>
 
 ## 本地分支与远程分支关联
 
-遇到的报错  
+遇到的报错
 
 fatal: The current branch dev has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin dev
+git push --set-upstream origin dev
 
 ```js
 git push --set-upstream origin dev
 // 或者
 git branch -u origin dev
+```
+
+## 删除本地分支和远程分支
+
+```js
+// 查看当前分支
+git branch -a
+
+// 删除本地分支
+git branch -d <branchName>
+
+// 删除远程分支
+git push origin --delete <branchName>
 ```
