@@ -61,3 +61,76 @@ git branch -d <branchName>
 // 删除远程分支
 git push origin --delete <branchName>
 ```
+
+## merge与rebase
+
+merge的基本用法
+
+```js
+// 创建并切换到merge-test
+git checkout -b merge-test
+// 创建一次提交
+git commit
+// 切换回master分支，并创建一次提交
+git checkout master
+// 创建一次提交
+git commit
+```
+
+![avater](assets/create-merge-test.jpg)
+
+在master分支执行命令
+
+```js
+git merge merge-test
+```
+
+![avater](assets/merge-branch-merge-test.jpg)
+
+***
+
+rebase基本用法
+
+```js
+// 创建并切换到rebase-test
+git checkout -b rebase-test
+// 创建一次提交
+git commit
+// 切换回master分支，并创建一次提交
+git checkout master
+// 创建一次提交
+git commit
+```
+
+![avater](assets/create-rebase-test.jpg)
+
+切换到rebase-test分支，并执行rebase命令
+
+```js
+git checkout rebase-test
+
+git rebase master
+```
+
+![avater](assets/git-rebase-master.jpg)
+
+切换回master，并执行rebase命令
+
+```js
+git checkout rebase-test
+// master的指针移动到最新的提交
+git rebase rebase-test
+```
+
+![avater](assets/git-rebase-rebase-test.jpg)
+
+***
+
+merge与rebase的区别
+
+1. merge会合并分支代码到主分支，并创建一次merge提交，会保留完整的提交记录
+2. rebase会在master分支上创建新的提交，只留干净的提交树
+
+![avater](assets/merge-branch-merge-test.jpg)![avater](assets/git-rebase-rebase-test.jpg)
+
+通过比较两个命令的结果，再考虑实际项目中使用哪个命令
