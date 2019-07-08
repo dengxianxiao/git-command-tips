@@ -9,12 +9,6 @@ git config --global user.name <userName>
 git config --global user.email <userEmail>
 ```
 
-## 提交本地分支到远程
-
-```js
-git push origin branch-name
-```
-
 ## 清除远程已删除，但是在本地查看远程分支时还存在的分支
 
 ```js
@@ -27,7 +21,7 @@ $ git branch -a
   remotes/origin/master
 
 $ git pull -p
-// 远程分支已经没有了dev，只有本地的dev分支，可以git branch -d dev 删除本地分支(不建议删除，留着本地备份比较好)
+// 远程分支已经没有了dev，只有本地的dev分支，可以git branch -d dev 删除本地分支
 * dev
   master
   remotes/origin/HEAD -> origin/master
