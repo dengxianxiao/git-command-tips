@@ -2,6 +2,13 @@
 
 记录一下平时经常使用的命令，遇到的问题
 
+## 设置用户名和邮箱
+
+```js
+git config --global user.name <userName>
+git config --global user.email <userEmail>
+```
+
 ## 提交本地分支到远程
 
 ```js
