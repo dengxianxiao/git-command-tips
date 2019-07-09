@@ -28,6 +28,12 @@ $ git pull -p
   remotes/origin/master
 ```
 
+## 推送本地分支到远程
+
+```js
+git push origin <branchName>
+```
+
 ## 删除远程分支
 
 ```js
