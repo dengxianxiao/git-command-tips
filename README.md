@@ -2,14 +2,14 @@
 
 记录一下平时经常使用的命令，遇到的问题
 
-## 设置用户名和邮箱
+## 1、设置用户名和邮箱
 
 ```js
 git config --global user.name <userName>
 git config --global user.email <userEmail>
 ```
 
-## 清除远程已删除，但是在本地查看远程分支时还存在的分支
+## 2、清除远程已删除，但是在本地查看远程分支时还存在的分支
 
 ```js
 $ git branch -a
@@ -28,19 +28,19 @@ $ git pull -p
   remotes/origin/master
 ```
 
-## 推送本地分支到远程
+## 3、推送本地分支到远程
 
 ```js
 git push origin <branchName>
 ```
 
-## 删除远程分支
+## 4、删除远程分支
 
 ```js
 git push origin --delete <branchName>
 ```
 
-## 本地分支与远程分支关联
+## 5、本地分支与远程分支关联
 
 遇到的报错
 
@@ -55,7 +55,7 @@ git push --set-upstream origin dev
 git branch -u origin dev
 ```
 
-## 删除本地分支和远程分支
+## 6、删除本地分支和远程分支
 
 ```js
 // 查看当前分支
@@ -68,7 +68,7 @@ git branch -d <branchName>
 git push origin --delete <branchName>
 ```
 
-## merge与rebase
+## 7、merge与rebase
 
 merge的基本用法
 
@@ -123,7 +123,7 @@ git rebase master
 切换回master，并执行rebase命令
 
 ```js
-git checkout rebase-test
+git checkout master
 // master的指针移动到最新的提交
 git rebase rebase-test
 ```
@@ -140,3 +140,15 @@ merge与rebase的区别
 ![avater](assets/merge-branch-merge-test.jpg)![avater](assets/git-rebase-rebase-test.jpg)
 
 通过比较两个命令的结果，再考虑实际项目中使用哪个命令
+
+## 8、reset
+
+```js
+git reset --<mode> head
+```
+
+有三种模式 hard soft mixed
+
+hard: 重置到某个节点，其它修改全部清空
+soft: 重置到某个节点，工作目录和暂存区不变
+mixed: 没有mode时默认选项，重置到某个节点，所有修改都会放到工作目录中
